@@ -9,5 +9,6 @@ public class OperatorLearning {
 
         System.out.println(5%2);
         System.out.println(5/2);
+        System.out.printf("%b & %b = %d",true,false,5 / 2);
     }
 }
