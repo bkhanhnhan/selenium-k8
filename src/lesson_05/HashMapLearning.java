@@ -13,6 +13,6 @@ public class HashMapLearning {
         emergencyList.put(116, "Other");
         emergencyList.put(116, "Else");
 
-        System.out.println(emergencyList.get(113));
+
     }
 }
