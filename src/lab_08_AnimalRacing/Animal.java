@@ -31,8 +31,11 @@ public class Animal {
         this.speed = speed;
     }
 
-    public int randomSpeed(){
-        int randomSpeed = new SecureRandom().nextInt(50);
-        return randomSpeed;
+    @Override
+    public String toString() {
+        return "Animal{" +
+                "name='" + name + '\'' +
+                ", speed=" + speed +
+                '}';
     }
 }
