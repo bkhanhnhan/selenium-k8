@@ -4,8 +4,35 @@ import java.security.SecureRandom;
 
 public class Animal {
 
-    public static void main(String[] args) {
-        int random = new SecureRandom().nextInt(50);
-        System.out.println(random);
+    public String name;
+    public int speed;
+
+    public Animal() {
+    }
+
+    public Animal(String name, int speed) {
+        this.name = name;
+        this.speed = speed;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public int randomSpeed(){
+        int randomSpeed = new SecureRandom().nextInt(50);
+        return randomSpeed;
     }
 }
