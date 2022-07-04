@@ -2,10 +2,10 @@ package lab_09;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.Arrays;
+import java.util.List;
 
-public class AnimalController {
+public class AnimalRacing {
         public static void main(String[] args) {
                 Animal tiger = new Animal.Builder()
                         .setName("Tiger")
@@ -37,36 +37,7 @@ public class AnimalController {
                         .setSpeed(new SecureRandom().nextInt(65))
                         .setWithWings(true)
                         .build();
-
-                ArrayList<Animal> animalArrayList = new ArrayList<>();
-                animalArrayList.add(tiger);
-                animalArrayList.add(dog);
-                animalArrayList.add(snake);
-                animalArrayList.add(raven);
-                animalArrayList.add(falcon);
-                animalArrayList.add(bird);
-
-                //Check which animal can race
-                for (int index = 0; index < animalArrayList.size(); index++) {
-                      if (animalArrayList.get(index).isWithWings() == true){
-                                animalArrayList.remove(index);
-                                index--;
-                      }
-                }
-
-                System.out.println("Animal can join the race is: ");
-                for (Animal animal : animalArrayList) {
-                        System.out.println(animal.name);
-                }
-
-                // Animal with fastest speed
-                Animal getFastest = Collections.max(animalArrayList, Comparator.comparingInt(Animal::getSpeed));
-
-                //Fastest speed
-                int maxSpeed = getFastest.getSpeed();
-
-                //Print results
-                System.out.printf("Winner is %s, with speed: %d km/h", getFastest.getName().toString(), maxSpeed);
+                new TestAnimal().getAnimalWinner(Arrays.asList(tiger, dog, snake, falcon, raven, bird));
     }
 }
 
